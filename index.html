@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="cal">
+            <form id="calcForm">
+                <div class="display">
+                    <input type="text" id="display" name="display">
+                </div>
+                <div>
+                    <input type="button" value="AC" onclick="clearDisplay()">
+                    <input type="button" value="DE" onclick="deleteLastCharacter()">
+                    <input type="button" value="." onclick="addCharacter('.')">
+                    <input type="button" value="/" onclick="addCharacter('/')">
+                </div>
+                <div>
+                    <input type="button" value="7" onclick="addCharacter('7')">
+                    <input type="button" value="8" onclick="addCharacter('8')">
+                    <input type="button" value="9" onclick="addCharacter('9')">
+                    <input type="button" value="*" onclick="addCharacter('*')">
+                </div>
+                <div>
+                    <input type="button" value="4" onclick="addCharacter('4')">
+                    <input type="button" value="5" onclick="addCharacter('5')">
+                    <input type="button" value="6" onclick="addCharacter('6')">
+                    <input type="button" value="+" onclick="addCharacter('+')">
+                </div>
+                <div>
+                    <input type="button" value="1" onclick="addCharacter('1')">
+                    <input type="button" value="2" onclick="addCharacter('2')">
+                    <input type="button" value="3" onclick="addCharacter('3')">
+                    <input type="button" value="-" onclick="addCharacter('-')">
+                </div>
+                <div>
+                    <input type="button" value="00" onclick="addCharacter('00')">
+                    <input type="button" value="0" onclick="addCharacter('0')">
+                    <input type="button" value="=" class="equal" onclick="calculateResult()">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script type="text/javascript">
+        function addCharacter(char) {
+            document.getElementById('display').value += char;
+        }
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+        function deleteLastCharacter() {
+            let currentValue = document.getElementById('display').value;
+            document.getElementById('display').value = currentValue.slice(0, -1);
+        }
+        function calculateResult() {
+            let currentValue = document.getElementById('display').value;
+            try {
+                document.getElementById('display').value = eval(currentValue);
+            } catch (e) {
+                showWarning();
+            }
+        }
+    </script>
+</body>
+</html>

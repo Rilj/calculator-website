@@ -1,0 +1,40 @@
+*{
+    padding: 0;
+    margin: 0;
+}
+.container{
+    width: 100%;
+    height: 100vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #d3fff8;
+}
+.cal{
+    background: #1b213f;
+    border-radius: 15px;
+    padding: 10px;
+}
+.cal form input{
+    margin: 10px;
+    width: 45px;
+    height: 45px;
+    padding: 10px;
+    background: #ffae35;
+    border-radius: 5px;
+}
+div.display input{
+    text-align: right;
+    color: #dbdbdb;
+    width: 230px;
+}
+div input.equal{
+    width: 115px;
+}
+.cal form input:hover{
+    background: #d12a2a;
+    transition: 300ms;
+}
+div.display input:hover{
+    background: #ffae35;
+}
